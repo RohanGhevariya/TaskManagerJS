@@ -17,27 +17,27 @@
           
           <ul class="action-list">
             <li class="item">
-              <img class="feather feather-inbox" src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/svg/inbox.svg" alt="" />
+              <img class="feather feather-inbox" src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/inbox.svg" alt="" />
               <span>Inbox</span>
             </li>
             <li class="item">
-              <img class="feather feather-star" src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/svg/star.svg" alt="" />
+              <img class="feather feather-star" src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/star.svg" alt="" />
               <span> Today</span>
             </li>
             <li class="item">
-              <img class="feather feather-calendar" src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/svg/calender.svg" alt="" />
+              <img class="feather feather-calendar" src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/calender.svg" alt="" />
               <span>Upcoming</span>
             </li>
             <li class="item">
-              <img class="feather feather-hash" src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/svg/hash.svg" alt="" />
+              <img class="feather feather-hash" src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/hash.svg" alt="" />
               <span>Important</span>
             </li>
             <li class="item">
-              <img class="feather feather-users" src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/svg/users.svg" alt="" />
+              <img class="feather feather-users" src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/users.svg" alt="" />
               <span>Meetings</span>
             </li>
             <li class="item">
-              <img class="feather feather-trash" src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/svg/trash.svg" alt="" />
+              <img class="feather feather-trash" src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/trash.svg" alt="" />
               <span>Trash</span>
             </li>
           </ul>
@@ -154,7 +154,7 @@
       <div class="right-bar">
         <div class="top-part">
           <a href="admin_login.html">
-            <img class="feather feather-users" src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/svg/users.svg" alt="" />
+            <img class="feather feather-users" src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/users.svg" alt="" />
           </a>
         </div>
         <div class="header">Team Members</div>
@@ -166,10 +166,10 @@
                 </div>
                 <div class="more-button"></div>
                 <div class="members">
-                  <img src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/images/img1.jpg" alt="member" />
-                  <img src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/images/img2.jpg" alt="member-2" />
-                  <img src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/images/img3.jpg" alt="member-3" />
-                  <img src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/images/img4.jpg" alt="member-4" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img1.jpg" alt="member" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img2.jpg" alt="member-2" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img3.jpg" alt="member-3" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img4.jpg" alt="member-4" />
                 </div>
               </div>
               <div class="task-box blue">
@@ -179,9 +179,9 @@
                 </div>
                 <div class="more-button"></div>
                 <div class="members">
-                  <img src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/images/img5.jpg" alt="member" />
-                  <img src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/images/img6.jpg" alt="member-2" />
-                  <img src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/images/img7.jpg" alt="member-3" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img5.jpg" alt="member" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img6.jpg" alt="member-2" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img7.jpg" alt="member-3" />
                 </div>
               </div>
               <div class="task-box red">
@@ -191,17 +191,44 @@
                 </div>
                 <div class="more-button"></div>
                 <div class="members">
-                  <img src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/images/img1.jpg" alt="member" />
-                  <img src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/images/img2.jpg" alt="member-2" />
-                  <img src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/images/img3.jpg" alt="member-3" />
-                  <img src="/Users/raviradadiya/Desktop/ProjectJS/TaskManagerJS/images/img4.jpg" alt="member-4" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img1.jpg" alt="member" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img2.jpg" alt="member-2" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img3.jpg" alt="member-3" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img4.jpg" alt="member-4" />
                 </div>
               </div>
             </div>
             <div class="bottom-part">
-              <a class="btnc" href=""><div class="text">Create</div></a>
+              <a class="btnc" href="#divone"><div class="text">Create</div></a>
             </div>
-            <div class="overlay" id="divone"></div>
+            <div class="overlay" id="divone">
+              <div class="wrapper">
+                <h2>Create new project</h2>
+                <a href="#" class="close">
+                  &times;
+                </a>
+                <div class="content">
+                  <div class="container">
+                    <form>
+                      <label>Title</label>
+                      <input type="text" placeholder="Task Title">
+                      <label>Task Details</label>
+                      <input type="text" placeholder="Task Details">
+                      <label for="start">Start date:</label>
+                      <input type="date" id="start" name="project-start" value="2022-07-22" min="2018-01-01" max="2025-12-31">
+                    </br>
+                      <label for="start">End date:</label>
+                      <input type="date" id="end" name="project-end" value="2022-07-22" min="2018-01-01" max="2025-12-31">
+                    </br>
+                    </br>
+                      <label>Hourly Pay Rate</label>
+                      <input type="text" placeholder="Hourly Pay Rate">
+                      <input type="submit" value="submit">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       <!-- right bar ends -->
