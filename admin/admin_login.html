@@ -15,7 +15,7 @@
     <!--<title>Login & Registration Form</title>-->
 </head>
 <body>
-    
+    <form action="admin_home.html">
     <div class="container">
         <div class="forms">
             <div class="form login">
@@ -23,11 +23,11 @@
 
                 <form action="#">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="text" placeholder="Enter your email" id="loginEmail" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Enter your password" required>
+                        <input type="password" class="password" placeholder="Enter your password" id="loginPaswd" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="input-field button">
-                        <input type="button" value="Login">
+                        <input href="admin_home.html" type="submit" value="Login" onclick="checkData()" >
                     </div>
                 </form>
 
@@ -59,21 +59,16 @@
 
                 <form action="#">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your name" required>
+                        <input type="text" placeholder="Enter your name" id="uname" required>
                         <i class="uil uil-user"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="text" placeholder="Enter your email" id="umail" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Create a password" required>
+                        <input type="password" class="password" id="upaswd" placeholder="Create a password" required>
                         <i class="uil uil-lock icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" class="password" placeholder="Confirm a password" required>
-                        <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
 
                     <div class="checkbox-text">
@@ -84,7 +79,7 @@
                     </div>
 
                     <div class="input-field button">
-                        <input type="button" value="Signup">
+                        <input type="button" value="Signup" onclick="addData()">
                     </div>
                 </form>
 
@@ -98,6 +93,7 @@
     </div>
 
     <script src="admin_login.js"></script>
+    </form>
 
 </body>
 </html>

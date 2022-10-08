@@ -32,3 +32,34 @@ const container = document.querySelector(".container"),
     login.addEventListener("click", ( )=>{
         container.classList.remove("active");
     });
+
+// registration
+    function addData(){
+        var name = document.getElementById('uname').value;
+        var email = document.getElementById("umail").value;
+        var pass = document.getElementById("upaswd").value;
+
+        localStorage.setItem('userName',name);
+        localStorage.setItem('userEmail',email);
+        localStorage.setItem('userPass',pass);
+    }
+
+    //login
+    function checkData(){
+        var loginEmail = document.getElementById('loginEmail').value;
+        var loginpaswd = document.getElementById('loginPaswd').value;
+
+        var getEmail = localStorage.getItem('userEmail');
+        var getPaswd = localStorage.getItem('userPass');
+
+        if(loginEmail == getEmail){
+            if(loginpaswd == getPaswd){
+                alert("Login  Successfull")
+            }
+            else{
+                alert("Wrong Password!")
+            }
+        }else{
+            alert("Please Enter valid Details")
+        }
+    }
