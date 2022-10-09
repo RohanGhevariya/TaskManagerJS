@@ -1,3 +1,5 @@
+
+
 const container = document.querySelector(".container"),
       pwShowHide = document.querySelectorAll(".showHidePw"),
       pwFields = document.querySelectorAll(".password"),
@@ -34,32 +36,43 @@ const container = document.querySelector(".container"),
     });
 
 // registration
-    function addData(){
+    function addData(e){
         var name = document.getElementById('uname').value;
         var email = document.getElementById("umail").value;
         var pass = document.getElementById("upaswd").value;
+        let userDetails = new Array();
+        userDetails = JSON.parse( localStorage.getItem("users"))?JSON.parse( localStorage.getItem("users")) :[];
+        if(userDetails.some((v) => {return v.email==email}))
+        {
+            alert("Email Address is exists!!")
 
-        localStorage.setItem('userName',name);
-        localStorage.setItem('userEmail',email);
-        localStorage.setItem('userPass',pass);
+        }
+        else
+        {
+            userDetails.push({
+                "uname":name, 
+                "umail":email,
+                "upaswd":pass
+    
+            }); 
+            localStorage.setItem("users", JSON.stringify(userDetails))
+        }
+      
     }
 
-    //login
+    // //login
     function checkData(){
-        var loginEmail = document.getElementById('loginEmail').value;
-        var loginpaswd = document.getElementById('loginPaswd').value;
+        var loginemail = document.getElementById("loginEmail").value;
+        var loginpass = document.getElementById("loginPaswd").value;
 
-        var getEmail = localStorage.getItem('userEmail');
-        var getPaswd = localStorage.getItem('userPass');
-
-        if(loginEmail == getEmail){
-            if(loginpaswd == getPaswd){
-                alert("Login  Successfull")
-            }
-            else{
-                alert("Wrong Password!")
-            }
-        }else{
-            alert("Please Enter valid Details")
+        let userDetails = new Array();
+        userDetails = JSON.parse( localStorage.getItem("users"))?JSON.parse( localStorage.getItem("users")) :[];
+        if(userDetails.some(() => {return v.email == loginemail && v.pass == loginpass}))
+        {
+            alert("logged In");
+            let currentuser = userDetails.filter(() => {return v.email == loginemail && v.pass == loginpass})[0]
+            localStorage.setItem('uname',currentuser.name);
+            localStorage.setItem('loginEmail',currentuser.loginemail);
         }
+      
     }

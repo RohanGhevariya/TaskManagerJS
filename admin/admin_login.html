@@ -15,9 +15,9 @@
     <!--<title>Login & Registration Form</title>-->
 </head>
 <body>
-    <form action="admin_home.html">
+    <form  action="admin_home.html">
     <div class="container">
-        <div class="forms">
+        <div class="forms" id="login">
             <div class="form login">
                 <span class="title">Login</span>
 
@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="input-field button">
-                        <input href="admin_home.html" type="submit" value="Login" onclick="checkData()" >
+                        <input type="submit" value="Login" onclick="checkData()" >
                     </div>
                 </form>
 
@@ -57,7 +57,7 @@
             <div class="form signup">
                 <span class="title">Registration</span>
 
-                <form action="#">
+                <form action="#" id="registration">
                     <div class="input-field">
                         <input type="text" placeholder="Enter your name" id="uname" required>
                         <i class="uil uil-user"></i>
@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="input-field button">
-                        <input type="button" value="Signup" onclick="addData()">
+                        <input type="button" value="Signup"   onclick="addData(),location.replace('admin_login.html')">
                     </div>
                 </form>
 
