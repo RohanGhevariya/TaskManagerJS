@@ -215,12 +215,15 @@
 
 const dialog= document.getElementById('task');
 const feed = document.getElementById("feed");
-myFunction();
-function addData(){
+
     let title = document.getElementById("tasktitle").value;
     let date = document.getElementById("duedate").value;
     let details = document.getElementById("taskdesc").value;
     let payRate = document.getElementById("payrate").value;
+myFunction();
+taskDetails();
+function addData(){
+    
     let taskDetails = new Array();
     taskDetails = JSON.parse( localStorage.getItem("task"))?JSON.parse( localStorage.getItem("task")) :[];
     if(taskDetails.some((v) => {return v.title==title}))
@@ -242,8 +245,37 @@ function addData(){
     }
   
 }
+ 
+function myFunction(){
+    console.log("getting data from local storage");
 
-function myFunction() {
-    var x = localStorage.getItem("title");
-    document.getElementById("taskname").innerHTML = x;
-  }
+    var newArr = JSON.parse(window.localStorage.getItem('task'));
+    
+    for (var i = 0; i < newArr.length; i++) {
+      var savedPerson = newArr[i];
+      console.log(savedPerson);
+      console.log(savedPerson.title)
+      
+      document.getElementById("item1").innerHTML = savedPerson.title;
+      document.getElementById("item2").innerHTML = savedPerson.title;
+    }
+}
+ 
+function taskDetails(){
+    var newArr = JSON.parse(window.localStorage.getItem('task'));
+    
+    for (var i = 0; i < newArr.length; i++) {
+      var savedPerson = newArr[i];
+      console.log(savedPerson);
+      console.log(savedPerson.title);
+      console.log(savedPerson.details);
+      console.log(savedPerson.date);
+      console.log(savedPerson.payRate);
+
+      document.getElementById("taskname").innerHTML = savedPerson.title;
+      document.getElementById("taskdetails").innerHTML = savedPerson.details;
+      document.getElementById("time").innerHTML = savedPerson.date;
+      document.getElementById("rate").innerHTML = savedPerson.payRate;
+}
+}
+  
