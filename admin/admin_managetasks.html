@@ -30,6 +30,7 @@
               <img class="feather feather-calendar"  src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/calender.svg" alt="" />
               <span onclick="location.replace('admin_managetasks.html')">Manage Tasks</span>
             </li>
+
             
           </ul>
         </div>
@@ -40,11 +41,21 @@
 
       <!-- page content starts -->
       <div class="page-content">
-        <div class="header">Recent Tasks</div>
+        <div class="header">Recent Projects</div>
         <!-- contnet categories starts -->
         <div class="content-categories">
-          
-          
+          <div class="label-wrapper">
+            <input class="nav-item" name="nav" type="radio" id="opt-2" checked />
+            <label class="category" for="opt-2">Assigned</label>
+          </div>
+          <div class="label-wrapper">
+            <input class="nav-item" name="nav" type="radio" id="opt-3" />
+            <label class="category" for="opt-3">In Progress</label>
+          </div>
+          <div class="label-wrapper">
+            <input class="nav-item" name="nav" type="radio" id="opt-4" />
+            <label class="category" for="opt-4">Completed</label>
+          </div>
         </div>
         <!--  -->
         <!-- contemt categories ends -->
@@ -134,15 +145,25 @@
             <img class="feather feather-users" src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/users.svg" alt="" />
           </a>
         </div>
-        <div class="header">Task Details</div>
+        <div class="header">Team Members</div>
             <div class="right-content">
-              <div class="feed" id="feed">
-                
+              <div class="task-box yellow">
+                <div class="description-task">
+                  <div class="time">08:00 - 09:00 AM</div>
+                  <div class="task-name">Product Review</div>
+                </div>
+                <div class="more-button"></div>
+                <div class="members">
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img1.jpg" alt="member" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img2.jpg" alt="member-2" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img3.jpg" alt="member-3" />
+                  <img src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/images/img4.jpg" alt="member-4" />
+                </div>
               </div>
               <div class="task-box blue">
                 <div class="description-task">
                   <div class="time">10:00 - 11:00 AM</div>
-                  <div class="task-name" ><p id="taskname"></p></div>
+                  <div class="task-name">Design Meeting</div>
                 </div>
                 <div class="more-button"></div>
                 <div class="members">
@@ -170,30 +191,28 @@
             </div>
             <div class="overlay" id="divone">
               <div class="wrapper">
-                <h2>Create new task</h2>
+                <h2>Create new project</h2>
                 <a href="#" class="close">
                   &times;
                 </a>
                 <div class="content">
                   <div class="container">
-                    
                     <form>
-                      
-                      <p>Title</p>
-                      <input type="text" autocomplete="off" id="tasktitle">
-                      <p>Due on</p>
-                      <input type="datetime-local" id="duedate">
-                      <p>Details</p>
-                      <textarea rows="8" id="taskdesc"></textarea>
-                      <p>Hourly Pay Rate</p>
-                        <input type="text" id="payrate" placeholder="Hourly Pay Rate" data-payrate>
-                      <div class="button-cluster right">
-                          <button data-close="task">Close</button>
-                          <button id="task-submit" onclick="addData(), window.location.reload();">Create</button>
-                      </div>
-                      
+                      <label>Title</label>
+                      <input type="text" placeholder="Task Title">
+                      <label>Task Details</label>
+                      <input type="text" placeholder="Task Details">
+                      <label for="start">Start date:</label>
+                      <input type="date" id="start" name="project-start" value="2022-07-22" min="2018-01-01" max="2025-12-31">
+                    </br>
+                      <label for="start">End date:</label>
+                      <input type="date" id="end" name="project-end" value="2022-07-22" min="2018-01-01" max="2025-12-31">
+                    </br>
+                    </br>
+                      <label>Hourly Pay Rate</label>
+                      <input type="text" placeholder="Hourly Pay Rate">
+                      <input type="submit" value="submit">
                     </form>
-                  
                   </div>
                 </div>
               </div>
