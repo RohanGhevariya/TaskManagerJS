@@ -452,7 +452,7 @@ body,
 	color: #06D85F;
 }
 .wrapper .content {
-	max-height: 30%;
+	max-height: 100%;
 	overflow: auto;
 }
 /*form*/
