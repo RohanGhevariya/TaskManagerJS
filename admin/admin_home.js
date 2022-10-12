@@ -215,17 +215,17 @@
 let id=""
 const dialog= document.getElementById('task');
 const feed = document.getElementById("feed");
+myFunction();
+taskDetails();
 
+function addData(){
     let title = document.getElementById("tasktitle").value;
     let date = document.getElementById("duedate").value;
     let details = document.getElementById("taskdesc").value;
     let payRate = document.getElementById("payrate").value;
-myFunction();
-taskDetails();
-function addData(){
     
     let taskDetails = new Array();
-    taskDetails = JSON.parse( localStorage.getItem("task"))?JSON.parse( localStorage.getItem("task")) :[];
+    taskDetails = JSON.parse(localStorage.getItem("task"))?JSON.parse( localStorage.getItem("task")) :[];
     if(taskDetails.some((v) => {return v.title==title}))
     {
         alert("Task is already exists!!")
@@ -240,7 +240,7 @@ function addData(){
             "payrate":payRate
 
         }); 
-        localStorage.setItem("task", JSON.stringify(taskDetails))
+        localStorage.setItem("task", JSON.stringify(taskDetails));
         localStorage.setItem(localStorage.length, value);
     }
   
