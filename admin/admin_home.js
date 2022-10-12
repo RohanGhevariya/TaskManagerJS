@@ -212,7 +212,7 @@
 //         return string
 //     }
 // }
-
+let id=""
 const dialog= document.getElementById('task');
 const feed = document.getElementById("feed");
 

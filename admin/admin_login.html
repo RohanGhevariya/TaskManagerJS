@@ -15,7 +15,7 @@
     <!--<title>Login & Registration Form</title>-->
 </head>
 <body>
-    <form  action="admin_home.html">
+    <form  >
     <div class="container">
         <div class="forms" id="login">
             <div class="form login">
@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="input-field button">
-                        <input type="submit" value="Login" onclick="checkData()" >
+                        <input type="submit" value="Login" onclick="checkData(), location.replace('admin_home.html')" >
                     </div>
                 </form>
 
