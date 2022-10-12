@@ -254,10 +254,9 @@ function myFunction(){
     for (var i = 0; i < newArr.length; i++) {
       var savedPerson = newArr[i];
       console.log(savedPerson);
-      console.log(savedPerson.title)
-      
+      console.log(savedPerson.title);
       document.getElementById("item1").innerHTML = savedPerson.title;
-      document.getElementById("item2").innerHTML = savedPerson.title;
+      
     }
 }
  
@@ -265,17 +264,12 @@ function taskDetails(){
     var newArr = JSON.parse(window.localStorage.getItem('task'));
     
     for (var i = 0; i < newArr.length; i++) {
-      var savedPerson = newArr[i];
-      console.log(savedPerson);
-      console.log(savedPerson.title);
-      console.log(savedPerson.details);
-      console.log(savedPerson.date);
-      console.log(savedPerson.payRate);
+        var savedPerson = newArr[i];
+      alert(savedPerson.title);
 
-      document.getElementById("taskname").innerHTML = savedPerson.title;
-      document.getElementById("taskdetails").innerHTML = savedPerson.details;
-      document.getElementById("time").innerHTML = savedPerson.date;
-      document.getElementById("rate").innerHTML = savedPerson.payRate;
+      document.getElementById("item1").innerHTML = savedPerson.title;
+    //   document.getElementById("taskdetails").innerHTML = savedPerson.details;
+    //   document.getElementById("time").innerHTML = savedPerson.date;
 }
 }
   

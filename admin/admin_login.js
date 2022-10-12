@@ -67,7 +67,7 @@ const container = document.querySelector(".container"),
 
         let userDetails = new Array();
         userDetails = JSON.parse( localStorage.getItem("users"))?JSON.parse( localStorage.getItem("users")) :[];
-        if(userDetails.some(() => {return v.email == loginemail && v.pass == loginpass}))
+        if(userDetails.some((v) => {return v.email == loginemail && v.pass == loginpass}))
         {
             alert("logged In");
             let currentuser = userDetails.filter(() => {return v.email == loginemail && v.pass == loginpass})[0]
