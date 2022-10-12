@@ -264,12 +264,10 @@ function taskDetails(){
     var newArr = JSON.parse(window.localStorage.getItem('task'));
     
     for (var i = 0; i < newArr.length; i++) {
-        var savedPerson = newArr[i];
-      alert(savedPerson.title);
-
-      document.getElementById("item1").innerHTML = savedPerson.title;
-    //   document.getElementById("taskdetails").innerHTML = savedPerson.details;
-    //   document.getElementById("time").innerHTML = savedPerson.date;
+      var savedPerson = newArr[i];
+      document.getElementById("taskname").innerHTML = savedPerson.title;
+      document.getElementById("taskdetails").innerHTML = savedPerson.details;
+      document.getElementById("time").innerHTML = savedPerson.date;
 }
 }
   
