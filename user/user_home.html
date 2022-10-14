@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management Dashboard UI</title>
+    <link rel="stylesheet" href="user_home.css" />
+  </head>
+  <body>
+    <div class="task-manager">
+      <!-- left bar starts -->
+      <div class="left-bar">
+        <div class="header1"><b>User Dashboard</b></div>
+        <!-- left content starts -->
+        <div class="left-content">
+          <ul class="action-list">
+            <li class="item">
+              <img class="feather feather-inbox" src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/inbox.svg" alt="" />
+              <a href="user_home.html"> Home </a>
+            </li>
+            <li class="item">
+              <img class="feather feather-star" src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/star.svg" alt="" />
+              <a href="inprogress.html">Inprogress Tasks</a>
+            </li>
+            <li class="item">
+              <img class="feather feather-calendar" src="/Users/raviradadiya/Desktop/JS/TaskManagerJS/svg/calender.svg" alt="" />
+              <a href="completed.html">Completed Tasks</a>
+            </li>
+            <li class="item">
+              <img class="feather feather-hash" src="/Users/raviradadiya/Desktop/JSNew/TaskManagerJS/svg/logout-svgrepo-com.svg" alt="" />
+              <a href="user_login.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+        <!-- left content ends -->
+      </div>
+      <!--  -->
+      <!-- left bar ends -->
+
+      <!-- page content starts -->
+      <div class="page-content">
+        <div class="header">Recent Projects</div>
+        <div class="content-categories"></div>
+        <!-- tasks wrapper starts -->
+        <div class="tasks-wrapper">
+            <div class="right-content">
+                <div class="task-box yellow">
+                  <div class="description-task">
+                    <div class="time">08:00 - 09:00 AM</div>
+                    <div class="task-name">Product Review</div> 
+                    </br> </br>
+                    <button class="button-23">Approve</button>
+                    <button class="button-23">Decline</button>
+                  </div>
+                </div>
+                <div class="task-box blue">
+                  <div class="description-task">
+                    <div class="time">10:00 - 11:00 AM</div>
+                    <div class="task-name">Design Meeting</div>
+                    </br> </br>
+                    <button class="button-23">Approve</button>
+                    <button class="button-23">Decline</button>
+                  </div>
+                </div>
+                <div class="task-box red">
+                  <div class="description-task">
+                    <div class="time">01:00 - 02:00 PM</div>
+                    <div class="task-name">Team Meeting</div>
+                    </br> </br>
+                    <button class="button-23">Approve</button>
+                    <button class="button-23">Decline</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <!-- tasks wrapper ends -->
+    </div>
+  </body>
+</html>
