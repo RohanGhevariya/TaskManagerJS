@@ -222,6 +222,7 @@ function addData(){
     let title = document.getElementById("tasktitle").value;
     let date = document.getElementById("duedate").value;
     let details = document.getElementById("taskdesc").value;
+    let assignTo = document.getElementById("assignTo").value;
     let payRate = document.getElementById("payrate").value;
     
     let taskDetails = new Array();
@@ -237,6 +238,7 @@ function addData(){
             "title":title, 
             "date":date,
             "details":details,
+            "assign":assignTo,
             "payrate":payRate
 
         }); 
@@ -252,10 +254,11 @@ function myFunction(){
     var newArr = JSON.parse(window.localStorage.getItem('task'));
     
     for (var i = 0; i < newArr.length; i++) {
-      var savedPerson = newArr[i];
-      console.log(savedPerson);
-      console.log(savedPerson.title);
-      document.getElementById("item1").innerHTML = savedPerson.title;
+    //   var savedPerson = newArr[i];
+    //   console.log(savedPerson);
+    //   console.log(savedPerson.title);
+      document.getElementById("item1").innerHTML = newArr[i].title;
+      console.log(newArr[i].title);
       
     }
 }
@@ -268,6 +271,8 @@ function taskDetails(){
       document.getElementById("taskname").innerHTML = savedPerson.title;
       document.getElementById("taskdetails").innerHTML = savedPerson.details;
       document.getElementById("time").innerHTML = savedPerson.date;
+      document.getElementById("assName").innerHTML = savedPerson.assign;
+
 }
 }
   
