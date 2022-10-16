@@ -215,18 +215,20 @@
 let id=""
 const dialog= document.getElementById('task');
 const feed = document.getElementById("feed");
-myFunction();
+const taskList = document.querySelector('.collection');
+//myFunction();
 taskDetails();
-
+loadTasks();
 function addData(){
-    let title = document.getElementById("tasktitle").value;
+    let title = document.querySelector('#tasktitle');
+    let Title = document.getElementById("tasktitle").value;
     let date = document.getElementById("duedate").value;
     let details = document.getElementById("taskdesc").value;
     let assignTo = document.getElementById("assignTo").value;
     let payRate = document.getElementById("payrate").value;
     
     let taskDetails = new Array();
-    taskDetails = JSON.parse(localStorage.getItem("task"))?JSON.parse( localStorage.getItem("task")) :[];
+    taskDetails = JSON.parse(localStorage.getItem("tasks"))?JSON.parse(localStorage.getItem("tasks")) :[];
     if(taskDetails.some((v) => {return v.title==title}))
     {
         alert("Task is already exists!!")
@@ -235,36 +237,39 @@ function addData(){
     else
     {
         taskDetails.push({
-            "title":title, 
+            "title":Title, 
             "date":date,
             "details":details,
             "assign":assignTo,
             "payrate":payRate
 
         }); 
-        localStorage.setItem("task", JSON.stringify(taskDetails));
-        localStorage.setItem(localStorage.length, value);
+        localStorage.setItem("tasks", JSON.stringify(taskDetails));
+        // localStorage.setItem(localStorage.length, value);
     }
-  
-}
- 
-function myFunction(){
-    console.log("getting data from local storage");
-
-    var newArr = JSON.parse(window.localStorage.getItem('task'));
+    createNewTaskElement(title.value);
+   location.reload(true);
     
-    for (var i = 0; i < newArr.length; i++) {
-    //   var savedPerson = newArr[i];
-    //   console.log(savedPerson);
-    //   console.log(savedPerson.title);
-      document.getElementById("item1").innerHTML = newArr[i].title;
-      console.log(newArr[i].title);
+
+} 
+ 
+// function myFunction(){
+//     console.log("getting data from local storage");
+
+//     var newArr = JSON.parse(window.localStorage.getItem('task'));
+    
+//     for (var i = 0; i < newArr.length; i++) {
+//     //   var savedPerson = newArr[i];
+//     //   console.log(savedPerson);
+//     //   console.log(savedPerson.title);
+//       document.getElementById("item1").innerHTML = newArr[i].title;
+//       console.log(newArr[i].title);
       
-    }
-}
+//     }
+// }
  
 function taskDetails(){
-    var newArr = JSON.parse(window.localStorage.getItem('task'));
+    var newArr = JSON.parse(window.localStorage.getItem('tasks'));
     
     for (var i = 0; i < newArr.length; i++) {
       var savedPerson = newArr[i];
@@ -275,4 +280,34 @@ function taskDetails(){
 
 }
 }
+
+// creating new element
+
+function createNewTaskElement(task) {
+    const newTask = document.createElement('li');
+    newTask.className = 'collection-item';
+    newTask.appendChild(document.createTextNode(task));
+    const newTaskATag = document.createElement('a');
+    newTaskATag.style.cursor = 'pointer';
+    newTaskATag.style.color = '#e01a4f';
+    newTaskATag.className = 'delete-item secondary-content';
+    newTaskATag.innerHTML = '<i class="material-icons">delete</i>';
+  
+    newTask.appendChild(newTaskATag);
+  
+    taskList.appendChild(newTask);
+  }
+  function loadTasks() {
+    let tasks;
+    if (localStorage.getItem('tasks') === null) {
+      tasks =[];
+    } else {
+      tasks = JSON.parse(localStorage.getItem('tasks').toString());
+    }
+    tasks.forEach(function (task) {
+      createNewTaskElement(task.title);
+    });
+  }
+  
+
   
