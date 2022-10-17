@@ -109,7 +109,7 @@ function createNewTaskElement(task) {
         <li><h3>${Title}</h3></li
        <li> <p>Due: ${date}</p></li>
        <li> <p>${details}</p></li>
-
+       <a class="button-23" href="#divone">Completed</a>
     </ul>`;
    
     taskCard.appendChild(newTask);

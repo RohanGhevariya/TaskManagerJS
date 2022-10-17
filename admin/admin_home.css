@@ -552,31 +552,26 @@ input[type="submit"] {
 }
 
 .card {
+  margin-top: 10px;
   flex: 0 0 auto;
   height: fit-content;
   padding: 10px;
   border-radius: 8px;
-  background-color: var(--surface-color);
+  background-color: var(--box-color);
   -webkit-user-select: text;
   user-select: text;
 }
 
-.card>h3 {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(22, 21, 21, 0.2);
 }
 
-.card>p {
-  max-height: 150px;
-  word-break: break-all;
-  white-space: normal;
-  overflow: auto;
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
 }
 
-.card>.button-cluster {
-  margin-top: 5px;
-}
+
 
 /* dialog {
   width: min(80%, 500px);
@@ -602,4 +597,26 @@ dialog button {
 .card button:hover,
 dialog button:hover {
   background-color: var(--accent-color);
+}
+.collection-item{
+
+position: relative;
+font-size: medium;
+  border-radius: 12px;
+  background-color: #d4edff;
+  width: 100%;
+  margin: 20px 0;
+  padding: 16px;
+  cursor: pointer;
+
+   
+}
+.collection-item:hover {
+  box-shadow: 2px 2px 4px 0px rgb(215, 214, 214);
+}
+
+.delete-item {
+  float: right;
+  margin-right: 10px;
+  
 }
