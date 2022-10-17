@@ -45,36 +45,7 @@ function addData(){
     
 
 } 
- 
-// function myFunction(){
-//     console.log("getting data from local storage");
-
-//     var newArr = JSON.parse(window.localStorage.getItem('task'));
-    
-//     for (var i = 0; i < newArr.length; i++) {
-//     //   var savedPerson = newArr[i];
-//     //   console.log(savedPerson);
-//     //   console.log(savedPerson.title);
-//       document.getElementById("item1").innerHTML = newArr[i].title;
-//       console.log(newArr[i].title);
-      
-//     }
-// }
- 
-// function taskDetails(){
-//     var newArr = JSON.parse(window.localStorage.getItem('tasks'));
-    
-//     for (var i = 0; i < newArr.length; i++) {
-//       var savedPerson = newArr[i];
-//       document.getElementById("taskname").innerHTML = savedPerson.title;
-//       document.getElementById("taskdetails").innerHTML = savedPerson.details;
-//       document.getElementById("time").innerHTML = savedPerson.date;
-//       document.getElementById("assName").innerHTML = savedPerson.assign;
-
-// }
-// }
-
-// creating new element
+//creating new element
 
 function createNewTaskElement(task) {
     const newTask = document.createElement('li');
@@ -101,15 +72,15 @@ function createNewTaskElement(task) {
       createNewTaskElement(task.title);
     });
   }
-//creating new element for taskCard
+ //creating new element for taskCard
 
-  function createTask(Title, date, details,assignTo, payRate) {
+  function createTask(Title, date, details) {
    var newTask = document.createElement('ul');
     newTask.innerHTML += `<ul class="card" id="taskDetails">
         <li><h3>${Title}</h3></li
        <li> <p>Due: ${date}</p></li>
        <li> <p>${details}</p></li>
-       <a class="button-23" href="#divone">Completed</a>
+       <a class="button-23" id="btnCompleted" onclick="completed()" href="#divone">Completed</a>
     </ul>`;
    
     taskCard.appendChild(newTask);
@@ -148,4 +119,22 @@ function removeTaskFromLocalStorage(taskToDelete) {
     }
   });
   localStorage.setItem('Tasks', JSON.stringify(tasks));
+}
+
+function completed(Title, date, details){
+    // console.log(Title);
+    // console.log("completed clicked");
+    // document.getElementById("completedTaskTitle").innerHTML = Title;
+    // let dateCompeted = document.getElementById('dateCompleted').value;
+    // let workedHours = document.getElementById('hoursOfWork').value;
+    var newArr = JSON.parse(window.localStorage.getItem('Tasks'));
+    
+    for (var i = 0; i < newArr.length; i++) {
+      var savedPerson = newArr[i];
+      document.getElementById("completedTaskTitle").innerHTML = savedPerson.title;
+      console.log(savedPerson.title);
+    //   document.getElementById("taskdetails").innerHTML = savedPerson.details;
+    //   document.getElementById("time").innerHTML = savedPerson.date;
+    //   document.getElementById("assName").innerHTML = savedPerson.assign;
+}
 }
