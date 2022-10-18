@@ -75,11 +75,16 @@ const container = document.querySelector(".container"),
 
         let userDetails = new Array();
         userDetails = JSON.parse( localStorage.getItem("users"))?JSON.parse( localStorage.getItem("users")) :[];
-        if(userDetails.some((v) => {return v.email == loginemail && v.pass == loginpass}))
+        if(userDetails.some((v) => {return v.umail == loginemail && v.upaswd == loginpass}))
         {
             alert("logged In");
-            let currentuser = userDetails.filter(() => {return v.email == loginemail && v.pass == loginpass})[0]
-            localStorage.setItem('uname',currentuser.name);
-            localStorage.setItem('loginEmail',currentuser.loginemail);
+            // let currentuser = userDetails.filter(() => {return v.email == loginemail && v.pass == loginpass})[0]
+            // localStorage.setItem('uname',currentuser.name);
+            // localStorage.setItem('loginEmail',currentuser.loginemail);
+            console.log("logged in");
         }
+        else{
+            console.log("invalid data");
+        }
+        
     }
