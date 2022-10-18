@@ -8,8 +8,13 @@
       <!-- <script>localStorage.getItem('uname');</script> -->
     </title>
     <link rel="stylesheet" href="admin_home.css" />
-  </head>
-  <body>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+       :root {
+        font: 2ch/1 Consolas
+      }
+    </style>
+    <body>
     <div class="task-manager">
       <!-- left bar starts -->
       <div class="left-bar">
@@ -83,8 +88,10 @@
                     <form>
                       <p>Title</p>
                       <input type="text" autocomplete="off" id="tasktitle">
-                      <p>Due on</p>
-                      <input type="datetime-local" id="duedate">
+                      <p>Start Date</p>
+                      <input type="date" id="startdate">
+                      <p>Due Date</p>
+                      <input type="date" id="duedate">
                       <p>Details</p>
                       <textarea rows="8" id="taskdesc"></textarea>
                       <p>Assign To</p>

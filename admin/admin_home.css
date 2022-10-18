@@ -659,6 +659,11 @@ font-size: medium;
 
 .delete-item {
   float: right;
+  margin-right: 5px;
+  
+}
+.update-item {
+  float: right;
   margin-right: 10px;
   
 }
