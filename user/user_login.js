@@ -82,9 +82,11 @@ const container = document.querySelector(".container"),
             // localStorage.setItem('uname',currentuser.name);
             // localStorage.setItem('loginEmail',currentuser.loginemail);
             console.log("logged in");
+            location.href = "user_home.html";
         }
         else{
-            console.log("invalid data");
+            alert("invalid data");
+            location.replace('user_login.html');
         }
         
     }
