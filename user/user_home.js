@@ -62,14 +62,14 @@ function addData(){
 // }
  
 // function taskDetails(){
-//     var newArr = JSON.parse(window.localStorage.getItem('tasks'));
+    // var newArr = JSON.parse(window.localStorage.getItem('tasks'));
     
-//     for (var i = 0; i < newArr.length; i++) {
-//       var savedPerson = newArr[i];
-//       document.getElementById("taskname").innerHTML = savedPerson.title;
-//       document.getElementById("taskdetails").innerHTML = savedPerson.details;
-//       document.getElementById("time").innerHTML = savedPerson.date;
-//       document.getElementById("assName").innerHTML = savedPerson.assign;
+    // for (var i = 0; i < newArr.length; i++) {
+    //   var savedPerson = newArr[i];
+    //   document.getElementById("taskname").innerHTML = savedPerson.title;
+    //   document.getElementById("taskdetails").innerHTML = savedPerson.details;
+    //   document.getElementById("time").innerHTML = savedPerson.date;
+    //   document.getElementById("assName").innerHTML = savedPerson.assign;
 
 // }
 // }

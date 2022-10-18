@@ -58,13 +58,15 @@
               <div class="content">
                 <div class="container">
                   <form>
-                    <label>Title</label>
-                    <label  id="completedTaskTitle"></label>
-                    <label>Date</label><br><br>
-                    <input type="datetime-local" id="dateCompleted"/></br><br>
+                    <label>Title: </label>
+                    <label  id="completedTaskTitle"></label><br><br>
+                    <label>Date</label>
+                    <input type="date" id="dateCompleted"/></br><br>
+                    <label>Rate: </label>
+                    <label id="payRate"></label><br><br>
                     <label>Total number of hours you worked</label>
                     <input type="text" id="hoursOfWork" placeholder="Number of hours">
-                    <button class="button-27"  id="btnSubmit">Submit</button>
+                    <button class="button-27" onclick="completedTasks()" id="btnSubmit">Submit</button>
                   </form>
                 </div>
               </div>
