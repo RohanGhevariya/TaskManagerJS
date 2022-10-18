@@ -62,14 +62,21 @@ const container = document.querySelector(".container"),
                 "upaswd":pass
     
             }); 
-            localStorage.setItem("users", JSON.stringify(userDetails))
+            let sd = localStorage.setItem("users", JSON.stringify(userDetails));
+            console.log(sd);
+            if(sd) {
+                window.location.href="user_login.html"
+            }
+            else {
+                alert('Invalid data');
+            }
         }
       
     }
 
     //login
     function checkData(){
-       
+
         var loginemail = document.getElementById("loginEmail").value;
         var loginpass = document.getElementById("loginPaswd").value;
 
@@ -78,8 +85,34 @@ const container = document.querySelector(".container"),
         if(userDetails.some((v) => {return v.email == loginemail && v.pass == loginpass}))
         {
             alert("logged In");
-            let currentuser = userDetails.filter(() => {return v.email == loginemail && v.pass == loginpass})[0]
+            let currentuser = userDetails.filter((v) => {return v.email == loginemail && v.pass == loginpass})[0]
             localStorage.setItem('uname',currentuser.name);
             localStorage.setItem('loginEmail',currentuser.loginemail);
+            window.location.href="user_home.html";
         }
+        else {
+           // window.location.href="user_login.html";
+        }
+    }
+
+    function checkLoginData() {
+
+        var lemail = document.getElementById('loginEmail').value;
+        var lpass = document.getElementById('loginPaswd').value;
+
+        let userDetails = new Array();
+        userDetails = JSON.parse( localStorage.getItem("users"))?JSON.parse( localStorage.getItem("users")) :[];
+        if(userDetails.some((v) => {return v.email == lemail && v.pass == lpass}))
+        {
+            alert("logged In");
+            let currentuser = userDetails.filter((v) => {return v.email == lemail && v.pass == lpass})[0]
+            localStorage.setItem('uname',currentuser.name);
+            localStorage.setItem('loginEmail',currentuser.loginemail);
+            window.location.href="user_home.html";
+        }
+        else {
+            alert('Invalid Data');
+            console.log('reached');
+        }
+
     }
