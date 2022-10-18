@@ -10,7 +10,7 @@ loadEventListener();
 function loadEventListener() {
 //document.addEventListener('DOMContentLoaded', loadTasks);
 document.addEventListener('DOMContentLoaded', loadTasksCard);
-//taskList.addEventListener('click', deleteTask);
+// taskList.addEventListener('click', deleteTask);
 }
 function addData(){
      title = document.querySelector('#tasktitle');
@@ -169,9 +169,20 @@ function completedTasks(){
        }); 
        localStorage.setItem("CompletedTasks", JSON.stringify(taskDetails));
        // localStorage.setItem(localStorage.length, value);
+       
    }
-//    createNewTaskElement(title.value);
-//   location.reload(true);
+
    
 
 } 
+function deleteTask(e) {
+    if (e.target.parentElement.classList.contains('button-27')) {
+      if (confirm('Are you sure?')) {
+        e.target.parentElement.parentElement.remove();
+  
+        removeTaskFromLocalStorage(
+          e.target.parentElement.parentElement.firstChild.textContent
+        );
+      }
+    }
+  }

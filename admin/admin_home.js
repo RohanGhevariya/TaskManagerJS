@@ -212,7 +212,7 @@
 //         return string
 //     }
 // }
-let id=""
+var lastId = 0;
 const dialog= document.getElementById('task');
 const taskList = document.querySelector('.collection');
 const taskCard = document.querySelector('.feed');
@@ -252,6 +252,7 @@ function addData(){
             "payrate":payRate
 
         }); 
+        
         localStorage.setItem("Tasks", JSON.stringify(taskDetails));
         // localStorage.setItem(localStorage.length, value);
     }
@@ -280,6 +281,7 @@ function createNewTaskElement(task) {
     }
     tasks.forEach(function (task) {
       createNewTaskElement(task.title);
+      
     });
   }
 //creating new element for taskCard

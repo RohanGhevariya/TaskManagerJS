@@ -10,6 +10,7 @@ function loadEventListener() {
 document.addEventListener('DOMContentLoaded', loadTasks);
 document.addEventListener('DOMContentLoaded', loadTasksCard);
 taskList.addEventListener('click', deleteTask);
+taskList.addEventListener('click', updateTasks);
 }
 function addData(){
      title = document.querySelector('#tasktitle');
@@ -118,17 +119,17 @@ function deleteTask(e) {
   }
 }
 // Delete task from local storage
-function removeTaskFromLocalStorage(taskToDelete) {
-  let tasks;
-  tasks = JSON.parse(localStorage.getItem('Tasks'));
-  tasks.forEach(function (task) {
-    if (task === taskToDelete) {
-      tasks.splice(task,1);
-    }
-  });
-  localStorage.setItem('Tasks', JSON.stringify(tasks));
+function removeTaskFromLocalStorage(index) {
+	const existingEntries = JSON.parse(localStorage.getItem("Tasks"));
+	existingEntries.splice(index, 1);
+	localStorage.setItem("Tasks", JSON.stringify(existingEntries));
 }
+//update Task
 
-function updateTask(e) {
-    
-  }
+function updateTasks(e) {
+    if (e.target.parentElement.classList.contains('update-item')) {
+        if (confirm('Are you sure?')) {
+            console.log('update clicked');
+      }
+}
+}
