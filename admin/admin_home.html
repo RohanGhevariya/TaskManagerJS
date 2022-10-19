@@ -81,18 +81,18 @@
                   <div class="container">
                     
                     <form>
-                      <p>Title</p>
+                      <label>Title</label>
                       <input type="text" autocomplete="off" id="tasktitle">
-                      <p>Due on</p>
-                      <input type="datetime-local" id="duedate">
-                      <p>Details</p>
+                      <label>Due on</label></br></br>
+                      <input type="datetime-local" id="duedate"></br></br>
+                      <label>Details</label>
                       <textarea rows="8" id="taskdesc"></textarea>
-                      <p>Assign To</p>
+                      <label>Assign To</label>
                       <input type="text" autocomplete="off" placeholder="Email of user" id="assignTo">
-                      <p>Hourly Pay Rate</p>
+                      <label>Hourly Pay Rate</label>
                         <input type="text" id="payrate" placeholder="Hourly Pay Rate" data-payrate>
                       <div class="button-cluster right">
-                          <button id="task-submit" type="submit" class="button-27" onclick="addData()">Create</button>
+                        <button id="task-submit" type="submit" class="button-27" onclick="addData()">Create</button>
                       </div>
                       
                     </form>
