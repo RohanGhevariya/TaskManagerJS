@@ -14,9 +14,10 @@ loadEventListener();
 //myFunction();
 // taskDetails();
 function loadEventListener() {
-document.addEventListener('DOMContentLoaded', loadTasks);
+// document.addEventListener('DOMContentLoaded', loadTasks);
 document.addEventListener('DOMContentLoaded', loadTasksCard);
-taskList.addEventListener('click', deleteTask);
+// taskList.addEventListener('click', deleteTask);
+email();
 }
 
 
@@ -65,7 +66,7 @@ function createNewTaskElement(task) {
     newTaskATag.className = 'delete-item secondary-content';
     newTaskATag.innerHTML = '<i class="material-icons">delete</i>';
   
-    newTask.appendChild(newTaskATag);
+//     newTask.appendChild(newTaskATag);
   
     taskList.appendChild(newTask);
   }
@@ -112,26 +113,19 @@ function loadTasksCard() {
    
   });
 }
-// Deletes a single task from the task list
-function deleteTask(e) {
-  if (e.target.parentElement.classList.contains('delete-item')) {
-    if (confirm('Are you sure?')) {
-      e.target.parentElement.parentElement.remove();
 
-      removeTaskFromLocalStorage(
-        e.target.parentElement.parentElement.firstChild.textContent
-      );
-    }
-  }
-}
-// Delete task from local storage
-function removeTaskFromLocalStorage(taskToDelete) {
+function email(){
   let tasks;
-  tasks = JSON.parse(localStorage.getItem('Tasks'));
+  if (localStorage.getItem('Tasks') === null) {
+    tasks =[];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('Tasks').toString());
+  }
   tasks.forEach(function (task) {
-    if (task === taskToDelete) {
-      tasks.splice(tasks.indexOf(task), 1);
-    }
+    var email = task.assignTo;
+    if(email == document.getElementById('loginEmail').value){
+    console.log(email);
+  }
   });
-  localStorage.setItem('Tasks', JSON.stringify(tasks));
+  
 }
