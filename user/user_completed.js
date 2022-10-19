@@ -67,8 +67,13 @@ function loadTasksCard() {
   } else {
     tasks = JSON.parse(localStorage.getItem('CompletedTasks').toString());
   }
+
+  console.log(tasks);
+
   tasks.forEach(function (task) {
-    createTask(task.title,task.date,task.payrate,task.hours);
+    if(task.assignedUser==localStorage.getItem("loggedUserEmail")){
+      createTask(task.title,task.date,task.payrate,task.hours);
+    }
+   
   });
-  console.log(title);
 }
