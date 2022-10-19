@@ -217,7 +217,6 @@ const dialog= document.getElementById('task');
 const taskList = document.querySelector('.collection');
 const taskCard = document.querySelector('.feed');
 let title,Title,date,details,assignTo,payRate;
-var is_Tcompleted = 0;
 loadEventListener();
 //myFunction();
 // taskDetails();
@@ -250,8 +249,8 @@ function addData(){
             "date":date,
             "details":details,
             "assign":assignTo,
-            "payrate":payRate,
-            "is_completed":is_Tcompleted
+            "payrate":payRate
+
         }); 
         
         localStorage.setItem("Tasks", JSON.stringify(taskDetails));
