@@ -77,11 +77,13 @@ const container = document.querySelector(".container"),
         userDetails = JSON.parse( localStorage.getItem("users"))?JSON.parse( localStorage.getItem("users")) :[];
         if(userDetails.some((v) => {return v.umail == loginemail && v.upaswd == loginpass}))
         {
+            localStorage.setItem("loggedUserEmail",loginemail);
+            console.log(localStorage.getItem("loggedUserEmail"));
+            
             alert("logged In");
             // let currentuser = userDetails.filter(() => {return v.email == loginemail && v.pass == loginpass})[0]
             // localStorage.setItem('uname',currentuser.name);
             // localStorage.setItem('loginEmail',currentuser.loginemail);
-            console.log("logged in");
             location.href = "user_home.html";
         }
         else{

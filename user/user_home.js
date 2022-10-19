@@ -4,6 +4,12 @@ const dialog= document.getElementById('task');
 const taskList = document.querySelector('.collection');
 const taskCard = document.querySelector('.feed');
 let title,Title,date,details,assignTo,payRate;
+
+// Getting Logged User Email
+let loggedUserEmail=localStorage.getItem("loggedUserEmail");
+console.log(loggedUserEmail);
+
+
 loadEventListener();
 //myFunction();
 // taskDetails();
@@ -12,6 +18,8 @@ document.addEventListener('DOMContentLoaded', loadTasks);
 document.addEventListener('DOMContentLoaded', loadTasksCard);
 taskList.addEventListener('click', deleteTask);
 }
+
+
 function addData(){
      title = document.querySelector('#tasktitle');
      Title = document.getElementById("tasktitle").value;
@@ -47,7 +55,6 @@ function addData(){
 } 
  
 // creating new element
-
 function createNewTaskElement(task) {
     const newTask = document.createElement('li');
     newTask.className = 'collection-item';
@@ -63,14 +70,21 @@ function createNewTaskElement(task) {
     taskList.appendChild(newTask);
   }
   function loadTasks() {
+    console.log("loading Tasks");
     let tasks;
     if (localStorage.getItem('Tasks') === null) {
       tasks =[];
     } else {
       tasks = JSON.parse(localStorage.getItem('Tasks').toString());
     }
+
+    console.log(tasks);
+
     tasks.forEach(function (task) {
-      createNewTaskElement(task.title);
+      if(task.assign==loggedUserEmail){
+        createNewTaskElement(task.title);
+      }
+      
     });
   }
 //creating new element for taskCard
@@ -92,7 +106,10 @@ function loadTasksCard() {
     tasks = JSON.parse(localStorage.getItem('Tasks').toString());
   }
   tasks.forEach(function (task) {
-    createTask(task.title,task.date,task.details);
+    if(task.assign==loggedUserEmail){
+      createTask(task.title,task.date,task.details);
+    }
+   
   });
 }
 // Deletes a single task from the task list

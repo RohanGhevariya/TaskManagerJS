@@ -18,7 +18,6 @@ const container = document.querySelector(".container"),
                     })
                 }else{
                     pwField.type = "password";
-
                     pwShowHide.forEach(icon =>{
                         icon.classList.replace("uil-eye", "uil-eye-slash");
                     })
@@ -42,7 +41,9 @@ const container = document.querySelector(".container"),
         var pass = document.getElementById("upaswd").value;
         let userDetails = new Array();
         userDetails = JSON.parse( localStorage.getItem("users"))?JSON.parse( localStorage.getItem("users")) :[];
-        if(userDetails.some((v) => {return v.email==email}))
+        if(userDetails.some((v) => {
+            return v.email==email
+        }))
         {
             alert("Email Address is exists!!")
 

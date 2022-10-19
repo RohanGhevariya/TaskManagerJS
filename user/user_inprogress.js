@@ -94,7 +94,11 @@ function loadTasksCard() {
     tasks = JSON.parse(localStorage.getItem('Tasks').toString());
   }
   tasks.forEach(function (task) {
-    createTask(task.title,task.date,task.details);
+    if(task.assign==localStorage.getItem("loggedUserEmail")){
+      createTask(task.title,task.date,task.details);
+    }
+    
+    
   });
 }
 // // Deletes a single task from the task list
@@ -144,6 +148,7 @@ function completed(Title, date, details){
 //add to completed task table
 
 function completedTasks(){
+  console.log("Kida");
     
     let compTaskTitle = document.getElementById("completedTaskTitle").textContent;
     let compDate = document.getElementById("dateCompleted").value;
@@ -164,7 +169,8 @@ function completedTasks(){
            "title":compTaskTitle, 
            "date":compDate,
            "payrate":rate,
-           "hours":hoursWorked
+           "hours":hoursWorked,
+           "assignedUser":localStorage.getItem("loggedUserEmail")
 
        }); 
        localStorage.setItem("CompletedTasks", JSON.stringify(taskDetails));

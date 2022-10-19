@@ -225,6 +225,10 @@ document.addEventListener('DOMContentLoaded', loadTasks);
 document.addEventListener('DOMContentLoaded', loadTasksCard);
 
 }
+
+
+
+
 function addData(){
      title = document.querySelector('#tasktitle');
      Title = document.getElementById("tasktitle").value;
@@ -243,21 +247,31 @@ function addData(){
     }
     else
     {
-        taskDetails.push({
-            "title":Title,
-            "sdate":sdate, 
-            "date":date,
-            "details":details,
-            "assign":assignTo,
-            "payrate":payRate
+        // taskDetails.push({
+        //     "title":"Task 1",
+        //     "sdate":"2022-10-18", 
+        //     "date":"2022-10-18",
+        //     "details":"Assign to Harman User",
+        //     "assign":"harmanUser@gmail.com",
+        //     "payrate":"20"
 
-        }); 
+        // }); 
+
+        taskDetails.push({
+          "title":Title,
+          "sdate":sdate, 
+          "date":date,
+          "details":details,
+          "assign":assignTo,
+          "payrate":payRate
+
+      }); 
         
         localStorage.setItem("Tasks", JSON.stringify(taskDetails));
         // localStorage.setItem(localStorage.length, value);
     }
     createNewTaskElement(title.value);
-   location.reload(true);
+   //location.reload(true);
     
 
 } 
