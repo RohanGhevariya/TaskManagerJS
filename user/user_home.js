@@ -8,9 +8,10 @@ loadEventListener();
 //myFunction();
 // taskDetails();
 function loadEventListener() {
-document.addEventListener('DOMContentLoaded', loadTasks);
+// document.addEventListener('DOMContentLoaded', loadTasks);
 document.addEventListener('DOMContentLoaded', loadTasksCard);
-taskList.addEventListener('click', deleteTask);
+// taskList.addEventListener('click', deleteTask);
+email();
 }
 function addData(){
      title = document.querySelector('#tasktitle');
@@ -48,31 +49,31 @@ function addData(){
  
 // creating new element
 
-function createNewTaskElement(task) {
-    const newTask = document.createElement('li');
-    newTask.className = 'collection-item';
-    newTask.appendChild(document.createTextNode(task));
-    const newTaskATag = document.createElement('a');
-    newTaskATag.style.cursor = 'pointer';
-    newTaskATag.style.color = '#e01a4f';
-    newTaskATag.className = 'delete-item secondary-content';
-    newTaskATag.innerHTML = '<i class="material-icons">delete</i>';
+// function createNewTaskElement(task) {
+//     const newTask = document.createElement('li');
+//     newTask.className = 'collection-item';
+//     newTask.appendChild(document.createTextNode(task));
+//     const newTaskATag = document.createElement('a');
+//     newTaskATag.style.cursor = 'pointer';
+//     newTaskATag.style.color = '#e01a4f';
+//     newTaskATag.className = 'delete-item secondary-content';
+//     newTaskATag.innerHTML = '<i class="material-icons">delete</i>';
   
-    newTask.appendChild(newTaskATag);
+//     newTask.appendChild(newTaskATag);
   
-    taskList.appendChild(newTask);
-  }
-  function loadTasks() {
-    let tasks;
-    if (localStorage.getItem('Tasks') === null) {
-      tasks =[];
-    } else {
-      tasks = JSON.parse(localStorage.getItem('Tasks').toString());
-    }
-    tasks.forEach(function (task) {
-      createNewTaskElement(task.title);
-    });
-  }
+//     taskList.appendChild(newTask);
+//   }
+//   function loadTasks() {
+//     let tasks;
+//     if (localStorage.getItem('Tasks') === null) {
+//       tasks =[];
+//     } else {
+//       tasks = JSON.parse(localStorage.getItem('Tasks').toString());
+//     }
+//     tasks.forEach(function (task) {
+//       createNewTaskElement(task.title);
+//     });
+//   }
 //creating new element for taskCard
 
   function createTask(Title, date, details,assignTo, payRate) {
@@ -95,26 +96,19 @@ function loadTasksCard() {
     createTask(task.title,task.date,task.details);
   });
 }
-// Deletes a single task from the task list
-function deleteTask(e) {
-  if (e.target.parentElement.classList.contains('delete-item')) {
-    if (confirm('Are you sure?')) {
-      e.target.parentElement.parentElement.remove();
 
-      removeTaskFromLocalStorage(
-        e.target.parentElement.parentElement.firstChild.textContent
-      );
-    }
-  }
-}
-// Delete task from local storage
-function removeTaskFromLocalStorage(taskToDelete) {
+function email(){
   let tasks;
-  tasks = JSON.parse(localStorage.getItem('Tasks'));
+  if (localStorage.getItem('Tasks') === null) {
+    tasks =[];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('Tasks').toString());
+  }
   tasks.forEach(function (task) {
-    if (task === taskToDelete) {
-      tasks.splice(tasks.indexOf(task), 1);
-    }
+    var email = task.assignTo;
+    if(email == document.getElementById('loginEmail').value){
+    console.log(email);
+  }
   });
-  localStorage.setItem('Tasks', JSON.stringify(tasks));
+  
 }
