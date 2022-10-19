@@ -51,9 +51,9 @@ function completedTasks(){
     newTask.innerHTML += `<ul class="card" id="taskDetails">
         <li><h3>${compTaskTitle}</h3></li
        <li> <p>Due: ${compDate}</p></li>
-       <li> <p>Rate: $${rate}</p></li>
+       <li> <p>Rate: ${rate}</p></li>
        <li> <p>Hours: ${hoursWorked}</p></li>
-       <li> <p>Cost: $${hoursWorked * rate}</p></li>
+       <li> <p>Total Cost: $${hoursWorked * rate}</p></li>
        
     </ul>`;
    
@@ -71,9 +71,9 @@ function loadTasksCard() {
   console.log(tasks);
 
   tasks.forEach(function (task) {
-    if(task.assignedUser==localStorage.getItem("loggedUserEmail")){
+    
       createTask(task.title,task.date,task.payrate,task.hours);
-    }
+    
    
   });
 }

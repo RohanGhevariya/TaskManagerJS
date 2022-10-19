@@ -13,7 +13,7 @@
        :root {
         font: 2ch/1 Consolas
       }
-      </style>
+    </style>
   </head>
   <body>
     <div class="task-manager">
@@ -50,16 +50,16 @@
         <div class="content-categories">
           <div class="label-wrapper">
             <input class="nav-item" name="nav" type="radio" id="opt-2" checked />
-            <label class="category" for="opt-2">Assigned</label>
+            <label class="category" for="opt-2"onclick="location.replace('admin_managetasks.html')">Assigned</label>
             
           </div>
           <div class="label-wrapper">
             <input class="nav-item" name="nav" type="radio" id="opt-3" />
-            <label class="category" for="opt-3">In Progress</label>
+            <label class="category" for="opt-3" onclick="location.replace('in-progress.html')">In Progress</label>
           </div>
           <div class="label-wrapper">
             <input class="nav-item" name="nav" type="radio" id="opt-4" />
-            <label class="category" for="opt-4">Completed</label>
+            <label class="category" for="opt-4" onclick="location.replace('completed.html')">Completed</label>
           </div>
           
         </div>
