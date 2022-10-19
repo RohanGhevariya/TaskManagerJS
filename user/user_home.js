@@ -17,7 +17,7 @@ function loadEventListener() {
 // document.addEventListener('DOMContentLoaded', loadTasks);
 document.addEventListener('DOMContentLoaded', loadTasksCard);
 // taskList.addEventListener('click', deleteTask);
-email();
+// email();
 }
 
 
@@ -114,18 +114,18 @@ function loadTasksCard() {
   });
 }
 
-function email(){
-  let tasks;
-  if (localStorage.getItem('Tasks') === null) {
-    tasks =[];
-  } else {
-    tasks = JSON.parse(localStorage.getItem('Tasks').toString());
-  }
-  tasks.forEach(function (task) {
-    var email = task.assignTo;
-    if(email == document.getElementById('loginEmail').value){
-    console.log(email);
-  }
-  });
+// function email(){
+//   let tasks;
+//   if (localStorage.getItem('Tasks') === null) {
+//     tasks =[];
+//   } else {
+//     tasks = JSON.parse(localStorage.getItem('Tasks').toString());
+//   }
+//   tasks.forEach(function (task) {
+//     var email = task.assignTo;
+//     if(email == document.getElementById('loginEmail').value){
+//     console.log(email);
+//   }
+//   });
   
-}
+// }

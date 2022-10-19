@@ -61,13 +61,13 @@ function createNewTaskElement(task) {
     newTaskATag.style.color = '#e01a4f';
     newTaskATag.className = 'delete-item secondary-content';
     newTaskATag.innerHTML = '<i class="fa fa-remove"></i>';
-    const updateTask = document.createElement('a');
-    updateTask.style.cursor = 'pointer';
-    updateTask.className = 'update-item secondary-content';
-    updateTask.innerHTML = '<i class="fa fa-pencil" href="#divone"></i>';
+    // const updateTask = document.createElement('a');
+    // updateTask.style.cursor = 'pointer';
+    // updateTask.className = 'update-item secondary-content';
+    // updateTask.innerHTML = '<i class="fa fa-pencil" href="#divone"></i>';
 
     newTask.appendChild(newTaskATag);
-    newTask.appendChild(updateTask);
+    //newTask.appendChild(updateTask);
     taskList.appendChild(newTask);
   }
   function loadTasks() {

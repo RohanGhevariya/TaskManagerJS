@@ -84,7 +84,7 @@ const container = document.querySelector(".container"),
             // let currentuser = userDetails.filter(() => {return v.email == loginemail && v.pass == loginpass})[0]
             // localStorage.setItem('uname',currentuser.name);
             // localStorage.setItem('loginEmail',currentuser.loginemail);
-            location.href = "user_home.html";
+            location.replace('user_home.html');
         }
         else{
             alert("invalid data");
