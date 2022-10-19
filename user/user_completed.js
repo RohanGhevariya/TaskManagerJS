@@ -50,7 +50,7 @@ function completedTasks(){
    var newTask = document.createElement('ul');
     newTask.innerHTML += `<ul class="card" id="taskDetails">
         <li><h3>${compTaskTitle}</h3></li
-       <li> <p>Due: ${compDate}</p></li>
+       <li> <p>Date of Completion: ${compDate}</p></li>
        <li> <p>Rate: $${rate}</p></li>
        <li> <p>Hours: ${hoursWorked}</p></li>
        <li> <p>Cost: $${hoursWorked * rate}</p></li>
